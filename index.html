@@ -61,17 +61,14 @@
   </script>
   
   
-  <div id="informationn"></div>
-  
-  
   <script>
-    const informationn=document.getElementById("informationn");
+    const information=document.getElementById("information");
     const infoArray=[];
   
       
       // 位置情報取得成功時の処理
     let successCallback=(position)=>{
-      informationn.innerHTML="";
+      information.innerHTML="";
     
       infoArray.緯度=position.coords.latitude;
       infoArray.経度=position.coords.longitude;
@@ -82,7 +79,7 @@
       infoArray.速度=position.coords.speed;
 
       for(key in infoArray){
-        informationn.innerHTML+=(key+":"+infoArray[key]+"<br>");
+        information.innerHTML+=(key+":"+infoArray[key]+"<br>");
       }
 
     }
@@ -101,7 +98,7 @@
             errorMessage = "位置情報の取得処理がタイムアウトしました";
             break;
           }
-        informationn.innerHTML=errorMessage;
+        information.innerHTML=errorMessage;
     }
     
     //ユーザーの現在の位置情報を取得を実行
