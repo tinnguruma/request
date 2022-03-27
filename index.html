@@ -97,41 +97,14 @@
     
     //ユーザーの現在の位置情報を取得を実行
     navigator.geolocation.watchPosition(successCallback, failureCallback);
-    
-    
-  </script>
-  
-  
-  <script>
-    const information=document.getElementById("information");
-    const infoArray=[];
-  
+      
+      
       
     
-  
-  
-  <div id="informationnn"></div>
-  
-  
-  
-  <script>
-    const informationnn = document.getElementById("informationnn");
-    const getNetworkCondition = () => {
-      informationnn.innerHTML = navigator.onLine;    
-      window.requestAnimationFrame(getNetworkCondition);
-    } 
-    getNetworkCondition();   
-  </script>
-  
-  <div id="informationnnn"></div>
-  
-  <script>
-    const informationnnn = document.getElementById("informationnnn");
-    const infoArray=[];
-
-    //センサーから加速度を取得して書き出す処理
+      
+  　　//センサーから加速度を取得して書き出す処理
     const deviceOrientationTest=()=>{window.addEventListener("devicemotion", (event)=> {          
-      informationnnn.innerHTML="";
+      information.innerHTML="";
     
       infoArray.加速度X軸=parseFloat(event.acceleration.x);
       infoArray.加速度Y軸=parseFloat(event.acceleration.y);
@@ -146,7 +119,7 @@
       infoArray.回転加速度Z軸=parseFloat(event.rotationRate.alpha);
     
       for(key in infoArray){
-        informationnnn.innerHTML+=(key+":"+infoArray[key]+"<br>");
+        information.innerHTML+=(key+":"+infoArray[key]+"<br>");
         };
     
       });
@@ -160,7 +133,22 @@
     })();
         }
     getNetworkCondition();
+      
+      
+    
+      
+      
+    const getNetworkCondition = () => {
+      information.innerHTML = navigator.onLine;    
+      window.requestAnimationFrame(getNetworkCondition);
+    } 
+    getNetworkCondition();
+    
+    
   </script>
+  
+  
+  
   
   
 </body>
