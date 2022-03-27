@@ -58,15 +58,9 @@
     for(key in infoArray){
       information.innerHTML+=(key+":"+infoArray[key]+"<br>");
     }
-  </script>
-  
-  
-  <script>
-    const information=document.getElementById("information");
-    const infoArray=[];
-  
       
-      // 位置情報取得成功時の処理
+      
+    // 位置情報取得成功時の処理
     let successCallback=(position)=>{
       information.innerHTML="";
     
@@ -103,7 +97,17 @@
     
     //ユーザーの現在の位置情報を取得を実行
     navigator.geolocation.watchPosition(successCallback, failureCallback);
-    </script>
+    
+    
+  </script>
+  
+  
+  <script>
+    const information=document.getElementById("information");
+    const infoArray=[];
+  
+      
+    
   
   
   <div id="informationnn"></div>
