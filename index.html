@@ -122,6 +122,45 @@
     getNetworkCondition();   
   </script>
   
+  <div id="informationnnn"></div>
+  
+  <script>
+    const informationnnn = document.getElementById("informationnnn");
+    const infoArray=[];
+
+    //センサーから加速度を取得して書き出す処理
+    const deviceOrientationTest=()=>{window.addEventListener("devicemotion", (event)=> {          
+      informationnnn.innerHTML="";
+    
+      infoArray.加速度X軸=parseFloat(event.acceleration.x);
+      infoArray.加速度Y軸=parseFloat(event.acceleration.y);
+      infoArray.加速度Z軸=parseFloat(event.acceleration.z);
+    
+      infoArray.加速度重力加速度X軸=parseFloat(event.accelerationIncludingGravity.x);
+      infoArray.加速度重力加速度Y軸=parseFloat(event.accelerationIncludingGravity.y);
+      infoArray.加速度重力加速度Z軸=parseFloat(event.accelerationIncludingGravity.z);
+    
+      infoArray.回転加速度X軸=parseFloat(event.rotationRate.beta);
+      infoArray.回転加速度Y軸=parseFloat(event.rotationRate.gamma);
+      infoArray.回転加速度Z軸=parseFloat(event.rotationRate.alpha);
+    
+      for(key in infoArray){
+        informationnnn.innerHTML+=(key+":"+infoArray[key]+"<br>");
+        };
+    
+      });
+    
+    };
+
+    //センサーから加速度を取得して書き出す処理をループ実行
+    (deviceOrientationLoop=()=>{
+      deviceOrientationTest();
+      window.requestAnimationFrame(deviceOrientationLoop);
+    })();
+        }
+    getNetworkCondition();
+  </script>
+  
   
 </body>
 </html>
