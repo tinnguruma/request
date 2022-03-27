@@ -65,6 +65,8 @@
   
   
   <script>
+    const informationn=document.getElementById("informationn");
+    const infoArray=[];
   
       
       // 位置情報取得成功時の処理
@@ -105,6 +107,21 @@
     //ユーザーの現在の位置情報を取得を実行
     navigator.geolocation.watchPosition(successCallback, failureCallback);
     </script>
+  
+  
+  <div id="informationnn"></div>
+  
+  
+  
+  <script>
+    const informationnn = document.getElementById("informationnn");
+    const getNetworkCondition = () => {
+      informationnn.innerHTML = navigator.onLine;    
+      window.requestAnimationFrame(getNetworkCondition);
+    } 
+    getNetworkCondition();   
+  </script>
+  
   
 </body>
 </html>
